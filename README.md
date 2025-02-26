@@ -5,7 +5,7 @@ SICSIM is a SIC/XE emulator written in Go. This project replicates the SIC/XE co
 ## Features
 
 - **SIC/XE Simulation:**  
-  Emulates the SIC/XE architecture with support for all standard instructions except for floating point and system instructions.
+  Emulates the SIC/XE architecture with support for almost all standard instructions.
 - **Registers:**  
   Fully implements SIC/XE **registers**, allowing proper execution of machine instructions.
 - **Memory Management:**  
@@ -25,3 +25,14 @@ SICSIM is a SIC/XE emulator written in Go. This project replicates the SIC/XE co
 ## 🖼 Screenshot
 
 ![SICSIM Screenshot](assets/simulator.png)
+
+## Limitations
+
+- **No Floating-Point & System Instructions:**  
+  It does not support floating-point operations or privileged system instructions.
+
+- **No Re-addressing (Modification Record Handling):**  
+  The simulator does not process **modification records** in object files. This means relocatable code requiring address adjustments during loading **will not work correctly**, potentially causing errors when running such programs.
+
+- **No Assembler or Linker Integration:**  
+  The simulator does not include an assembler or linker, so source code must be assembled externally before loading into SICSIM.
